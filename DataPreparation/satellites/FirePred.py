@@ -71,7 +71,7 @@ class FirePred:
         # Transform from u/v to direction and speed, to align with GRIDMET and DEM data
         forecast_wind_speed = forecast_u_wind.multiply(forecast_u_wind).add(
             forecast_v_wind.multiply(forecast_v_wind)).sqrt().rename("forecast wind speed")
-        forecast_wind_direction = forecast_v_wind.divide(forecast_u_wind).atan()
+        forecast_wind_direction = forecast_v_wind.atan2(forecast_u_wind)
         forecast_wind_direction = forecast_wind_direction.divide(2 * math.pi).multiply(360).rename(
             "forecast wind direction")
 
