@@ -1,5 +1,11 @@
 # WildfireSpreadTS - Dataset creation
 
+## Updates 
+
+**Feb 2026:** Thanks to an observant researcher who kindly reached out, an error in the computation of the wind direction is now corrected. I had made an error in using atan(v/u) instead of atan2(v,u) for computing the wind direction. The former loses quadrant information. Thanks for pointing this out!
+
+------
+
 To create the dataset, you will need access to Google Cloud Storage and Google Earth Engine. 
 
 1. Install all necessary requirements from the requirements.txt file via 
